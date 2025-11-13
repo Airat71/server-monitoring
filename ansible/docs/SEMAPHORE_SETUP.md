@@ -39,7 +39,7 @@ docker run -d \
   --name ansible-semaphore \
   -p 3000:3000 \
   -v ~/ansible-semaphore-data:/data \
-  -v /Users/airat/github-projects/ansible:/ansible \
+  -v /path/to/server-monitoring/ansible:/ansible \
   ansiblesemaphore/semaphore:latest
 ```
 

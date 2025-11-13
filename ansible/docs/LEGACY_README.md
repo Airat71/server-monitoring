@@ -164,5 +164,5 @@ crontab -e
 
 ```
 # Мониторинг каждые 5 минут
-*/5 * * * * cd /Users/airat/github-projects && ansible-playbook -i ansible/inventories/servers.ini ansible/monitoring.yml > /dev/null 2>&1
+*/5 * * * * cd /path/to/server-monitoring && ansible-playbook -i ansible/inventories/servers.ini ansible/monitoring.yml > /dev/null 2>&1
 ```

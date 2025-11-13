@@ -14,15 +14,15 @@
 ## Полезные команды
 ```bash
 # Запуск плейбука
-cd /Users/airat/github-projects
+cd /path/to/server-monitoring
 ansible-playbook -i ansible/inventories/servers.ini ansible/monitoring.yml
 
 # Запуск через docker-compose (Semaphore)
-cd /Users/airat/github-projects/ansible/semaphore
+cd /path/to/server-monitoring/ansible/semaphore
 docker-compose up -d
 docker-compose ps
 
-# Проверка видео напрямую
+# Проверка сайта напрямую
 curl -I https://example.com
 
 # Проверка скрипта на сервере
@@ -35,9 +35,4 @@ ssh your_username@your-server-ip "/srv/projects/monitoring/scripts/check_website
 - `SEMAPHORE_CONFIG.md` — пошаговая конфигурация внутри UI
 - `VSCODE_SETUP.md` — настройка расширений
 - `GUI_COMPARISON.md` — сравнение интерфейсов
-
-## Следующие шаги для нового чата
-- Перед началом работ прочитать этот файл и `SEMAPHORE_CONFIG.md`.
-- Уточнить у пользователя, обновлён ли URL в Тильде.
-- При необходимости помочь с автоматизацией (cron, alerts) после подтверждения.
 
