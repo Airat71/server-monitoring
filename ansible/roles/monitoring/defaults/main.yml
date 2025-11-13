@@ -1,0 +1,29 @@
+---
+# Default variables for the monitoring role
+monitoring_owner: airat
+monitoring_group: labusers
+monitoring_dir: /srv/projects/monitoring
+monitoring_dashboard_dir: "{{ monitoring_dir }}/dashboard"
+monitoring_scripts_dir: "{{ monitoring_dir }}/scripts"
+monitoring_logs_dir: "{{ monitoring_dir }}/logs"
+
+# Package requirements
+monitoring_packages_common:
+  - curl
+  - coreutils
+monitoring_packages_family_map:
+  Debian:
+    - procps
+  RedHat:
+    - procps-ng
+
+monitoring_website_url: "https://example.com"
+
+# Thresholds for the resource status evaluation (%)
+monitoring_cpu_warning: 70
+monitoring_cpu_critical: 90
+monitoring_ram_warning: 80
+monitoring_ram_critical: 90
+monitoring_disk_warning: 80
+monitoring_disk_critical: 90
+

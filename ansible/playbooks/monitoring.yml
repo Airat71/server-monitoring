@@ -1,0 +1,13 @@
+---
+- name: Server monitoring
+  hosts: servers
+  become: true
+  gather_facts: false
+  strategy: linear
+  serial: 1
+  max_fail_percentage: 0
+  environment:
+    LC_ALL: C
+    LANG: C
+  roles:
+    - monitoring

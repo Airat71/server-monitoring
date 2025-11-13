@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-11-09T12:00:00Z",
+  "cpu": {
+    "usage": 37.4,
+    "status": "OK"
+  },
+  "ram": {
+    "usage": 58.2,
+    "used": "7.1G",
+    "total": "12G",
+    "status": "OK"
+  },
+  "disk": {
+    "usage": 68,
+    "used": "85G",
+    "total": "125G",
+    "status": "WARNING"
+  }
+}
+

@@ -1,0 +1,53 @@
+- name: Ensure monitoring directories exist
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ monitoring_owner }}"
+    group: "{{ monitoring_group }}"
+    mode: "02775"
+  loop:
+    - "{{ monitoring_dir }}"
+    - "{{ monitoring_dashboard_dir }}"
+    - "{{ monitoring_scripts_dir }}"
+    - "{{ monitoring_logs_dir }}"
+  loop_control:
+    label: "{{ item }}"
+  tags:
+    - monitoring
+    - setup
+
+- name: Determine target OS family
+  ansible.builtin.set_fact:
+    monitoring_target_os_family: "{{ ansible_facts.os_family | default(ansible_os_family, true) | default('') }}"
+  tags:
+    - monitoring
+    - setup
+
+- name: Ensure monitoring dependencies are installed
+  ansible.builtin.package:
+    name: "{{ (monitoring_packages_common + monitoring_packages_family_map.get(monitoring_target_os_family, [])) | unique }}"
+    state: present
+  when: (monitoring_packages_common + monitoring_packages_family_map.get(monitoring_target_os_family, [])) | length > 0
+  tags:
+    - monitoring
+    - setup
+    - packages
+
+- name: Capture monitoring timestamp
+  ansible.builtin.command: date -Iseconds
+  register: monitoring_timestamp_raw
+  changed_when: false
+  tags:
+    - monitoring
+    - metrics
+    - timestamp
+
+- name: Store monitoring timestamp
+  ansible.builtin.set_fact:
+    monitoring_timestamp: "{{ monitoring_timestamp_raw.stdout | default(lookup('pipe', 'date -Iseconds'), true) }}"
+  tags:
+    - monitoring
+    - metrics
+    - timestamp
+
+# CPU

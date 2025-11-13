@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  semaphore:
+    image: ansiblesemaphore/semaphore:latest
+    container_name: ansible-semaphore
+    ports:
+      - "3000:3000"
+    volumes:
+      - semaphore-data:/data
+      - ../:/ansible
+    environment:
+      SEMAPHORE_DB_USER: semaphore
+      SEMAPHORE_DB_PASSWORD: semaphore_password
+      SEMAPHORE_DB_HOST: mysql
+      SEMAPHORE_DB_PORT: 3306
+      SEMAPHORE_DB: semaphore
+      SEMAPHORE_DB_DRIVER: mysql
+      SEMAPHORE_ADMIN_PASSWORD: CHANGE_THIS_PASSWORD
+      SEMAPHORE_ADMIN_NAME: Admin
+      SEMAPHORE_ADMIN_EMAIL: admin@localhost
+      ANSIBLE_CONFIG: /ansible/ansible/ansible.cfg
+      ANSIBLE_ROLES_PATH: /ansible/ansible/roles
+      TELEGRAM_BOT_TOKEN: YOUR_TELEGRAM_BOT_TOKEN_HERE
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: semaphore-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: semaphore
+      MYSQL_USER: semaphore
+      MYSQL_PASSWORD: semaphore_password
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  semaphore-data:
+  mysql-data:
+

@@ -1,0 +1,4 @@
+---
+- name: Server monitoring (compatibility entry point)
+  import_playbook: playbooks/monitoring.yml
+

@@ -1,0 +1,74 @@
+# SSH Keys and certificates
+*.pem
+*.key
+*.crt
+*.cer
+id_rsa*
+id_ecdsa*
+id_ed25519*
+*.pub
+.ssh/
+
+# Environment files with secrets
+.env
+.env.local
+.env.*.local
+secrets.yml
+vault.yml
+*.vault
+
+# Inventory files with real credentials
+inventories/prod.ini
+inventories/production.ini
+inventories/*.ini
+!inventories/example.ini
+!inventories/README.md
+
+# Docker compose with secrets
+docker-compose.override.yml
+docker-compose.local.yml
+semaphore/docker-compose.yml
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.backup
+*.bak
+
+# Ansible
+*.retry
+.ansible/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Credentials and passwords
+credentials.txt
+passwords.txt
+*secret*
+*token*
+
