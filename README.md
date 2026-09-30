@@ -197,5 +197,16 @@ MIT License - см. файл [LICENSE](LICENSE)
 
 ---
 
+## 🔭 Нужен полный стек?
+
+Если нужны Grafana-дашборды, Alertmanager, Telegram-алерты и деплой на N серверов одной командой:
+
+**[monitoring-stack](https://github.com/Airat71/monitoring-stack)** — Prometheus + Grafana + Alertmanager + Ansible.
+7 готовых дашбордов, 20 правил алертов, fail2ban в Grafana, мультисерверная поддержка.
+
+---
+
 ⭐ Если этот проект оказался полезен, поставьте звезду!
+
+
 
