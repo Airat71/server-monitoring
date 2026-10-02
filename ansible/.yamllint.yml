@@ -7,6 +7,10 @@ rules:
     allow-non-breakable-words: true
   truthy:
     check-keys: false
+  empty-lines:
+    max: 2
+    max-start: 0
+    max-end: 0
 
 ignore: |
   docs/**
