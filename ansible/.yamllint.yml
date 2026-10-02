@@ -13,6 +13,8 @@ rules:
     max-end: 0
 
 ignore: |
-  docs/**
-  semaphore/**
+  docs/
+  semaphore/
+  .yamllint
+  .yamllint.yml
 

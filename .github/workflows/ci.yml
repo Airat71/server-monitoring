@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: pip install yamllint -q
       - name: Lint Ansible YAML
-        run: yamllint -c ansible/.yamllint.yml ansible/
+        run: cd ansible && yamllint -c .yamllint.yml .
 
   shellcheck:
     name: ShellCheck
