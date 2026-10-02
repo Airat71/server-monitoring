@@ -7,8 +7,14 @@ rules:
     allow-non-breakable-words: true
   truthy:
     check-keys: false
+  empty-lines:
+    max: 2
+    max-start: 1
+    max-end: 0
 
 ignore: |
-  docs/**
-  semaphore/**
+  docs/
+  semaphore/
+  .yamllint
+  .yamllint.yml
 
