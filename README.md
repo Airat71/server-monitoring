@@ -184,7 +184,7 @@ MIT License - см. файл [LICENSE](LICENSE)
 
 ## ✨ Автор
 
-**Айрат** - Системный администратор
+**Айрат** - DevOps-инженер
 
 - GitHub: [@Airat71](https://github.com/Airat71)
 
