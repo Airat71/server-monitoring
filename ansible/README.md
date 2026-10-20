@@ -121,7 +121,6 @@ ansible-playbook --check -i inventories/prod.ini playbooks/monitoring.yml
 - Настройка Ansible Semaphore: `docs/SEMAPHORE_SETUP.md` и `docs/SEMAPHORE_CONFIG.md`
 - Сравнение интерфейсов и dev-окружение: `docs/GUI_COMPARISON.md`, `docs/VSCODE_SETUP.md`
 - Легаси-описание проекта: `docs/LEGACY_README.md`
-- Хендовер заметки: `docs/NEXT_CHAT_HANDOVER.md`
 
 ## 📌 Следующие шаги
 
