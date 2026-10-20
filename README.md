@@ -18,7 +18,6 @@
 - ✅ **Telegram уведомления** - мгновенные алерты о проблемах
 - ✅ **JSON API** - готовые метрики для интеграции
 - ✅ **Легковесность** - минимальные зависимости, работает на любом Linux
-- ✅ **Production-ready** - протестировано на реальных серверах
 
 ## 🗂️ Структура проекта
 
@@ -202,7 +201,7 @@ MIT License - см. файл [LICENSE](LICENSE)
 Если нужны Grafana-дашборды, Alertmanager, Telegram-алерты и деплой на N серверов одной командой:
 
 **[monitoring-stack](https://github.com/Airat71/monitoring-stack)** — Prometheus + Grafana + Alertmanager + Ansible.
-7 готовых дашбордов, 20 правил алертов, fail2ban в Grafana, мультисерверная поддержка.
+9 готовых дашбордов, 17 правил алертов, fail2ban в Grafana, мультисерверная поддержка.
 
 ---
 
